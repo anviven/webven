@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anvitha | Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0077B5;
+      --muted: #666;
+      --accent: #000;
+      --card-bg: #f5f5f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    titleheadings{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ================= HEADER ================= */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 253, 253, 0.8);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid #e5e5e500;
+      z-index: 1000;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 24px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.6;
+    }
+
+    /* ================= SECTIONS ================= */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 120px 24px 80px;
+    }
+
+    .fade-section {
+      transition: opacity 1.0s ease;
+    }
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 32px;
+    }
+
+    p {
+      max-width: 700px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ================= HOME ================= */
+    .home {
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: #ddd;
+      margin: 32px auto;
+      overflow: hidden;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ================= PROJECTS ================= */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 16px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      background: #ccc;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+    }
+
+    /* ================= EXPERIENCE / LEADERSHIP ================= */
+    .accordion-item {
+      background: var(--card-bg);
+      border-radius: 16px;
+      margin-bottom: 16px;
+      padding: 20px;
+      cursor: pointer;
+    }
+
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+
+    .accordion-content {
+      display: none;
+      margin-top: 12px;
+      color: var(--muted);
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+    }
+
+    /* ================= SKILLS ================= */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    /* ================= FOOTER ================= */
+  .contact-footer {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact-footer h3 {
+  margin-bottom: 24px;
+}
+
+.contact-icons,
+.contact-text {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.contact-icons a {
+  font-size: 26px;
+  color: #0077b5; /* clickable blue */
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-icons a:hover {
+  transform: translateY(-3px);
+  opacity: 0.7;
+}
+
+.contact-text span {
+  font-size: 14px;
+  color: #333;
+}
+
+ 
+    footer {
+      text-align: center;
+      padding: 25px 25px;
+      border-top: 1px solid #e5e5e5;
+      background: #fafafa;
+    }
+
+    footer a {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      margin-top: 8px;
+    }
+    .home p {
+  margin: 0 auto;
+  text-align: center;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(75px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">✦ANVITHA✦</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="home fade-section">
+  <h1>Hi, I'm Anvitha!</h1>
+
+  <div class="profile-pic">
+    <img src="headshot.jpeg" alt="Anvitha">
+  </div>
+
+  <p class="fade-in">
+Hi! Thank you for visiting my personal website. I'm Anvitha, a recent graduate from the University of Texas at Dallas, where I studied Information Technology and Systems. I have a passion for technology and would love to work on leveraging technology to simplify everyday lives. I enjoy using data and systems to help people through innovative solutions. Feel free to explore my projects, experiences, and more below! If you would like to stay in touch, my contact information is at the bottom.
+  </p>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="fade-section">
+  <h2>Projects</h2>
+  <div class="grid">
+    <!-- Repeat for 6 projects -->
+    <div class="card">
+      <img src="p1.png" alt="">
+      <h3>Nonprofit Website Build</h3>
+      <p class="fade-in">January 2025 – May 2025</p>
+      <p class="fade-in"> <br>
+I led the end-to-end website revamp for The Chemist Club, and as the team lead, I served as a liaison between the client, organizer, and our team. I translated requirements from the client into functional specifications and managed weekly client meetings to ensure alignment on project milestones. Our team produced site maps, wireframes, and mockups. Post-launch, our web design resulted in more member sign-ups, helping the nonprofit improve user experience.</p>
+    </div>
+    <div class="card">
+      <img src="p2.png" alt="">
+      <h3>IBM Case Competition</h3>
+       <p class="fade-in">October 2024 – December 2024</p>
+       <br>
+      <p class="fade-in">My team developed an AI-powered solution using IBM WatsonX to address food accessibility challenges affecting over 17 million residents. Recognizing that many food desert programs rely on outdated census data, we focused on utilizing real-time data models to provide more accurate information. We also conducted interviews with residents to translate real-world pain points into a product concept and a year long community support plan for identified food deserts. Our models were prototyped using Tableau maps that visualized severe food desert locations for better resource allocation.</p>
+     </div>
+    <div class="card">
+      <img src="p3.png" alt="">
+      <h3>E-Commerce Merchandise Store</h3>
+             <p class="fade-in">March 2024</p>
+             <br>
+      <p class="fade-in"> I developed an e-commerce merchandise platform with a focus on data modeling and user experience. I designed and implemented a relational database using SQL to support product, order, and customer data. I used business process models to initially show the purpose of the website. To enhance the customer journey, I created UX designs in Figma, emphasizing the navigation and checkout flows. This project strengthened my ability to connect backend data systems with front-end user experiences.</p>
+     </div>
+    <div class="card">
+      <img src="p4.png" alt="">
+      <h3>Calendar Auto-Populate Feature</h3>
+      <p class="fade-in">September 2025</p>
+      <br>
+      <p class="fade-in"> I built an AI-assisted productivity feature that extracts assignment deadlines from syllabus PDFs and automatically populates the user's calendar. The solution reduced manual data entry time and significantly minimized errors. This project was started due to an identified problem of missed assignments or exams, simply due to entering dates incorrectly. </p>
+      </div>
+    <div class="card">
+      <img src="p5.png" alt="">
+      <h3>Airbnb Machine Learning Project</h3>
+      <p class="fade-in">November 2025</p>
+      <br>
+      <p class="fade-in">I developed and evaluated machine learning models in Google Colab to create a prediction engine aimed at improving decision-making for Airbnb users. The project involved data preprocessing, model training, and performance evaluation.</p>
+       </div>
+    <div class="card">
+      <img src="p6.png" alt="">
+      <h3>Personal Portfolio Website</h3>
+      <p class="fade-in">January 2026</p>
+      <br>
+      <p class="fade-in">I designed this website to help showcase some of my projects, experience, and skills. The site emphasizes clean UI/UX and responsive design. I loved experimenting with ways I can make my site more "animated" and clean. This project reflects my interest in building products and managing projects.</p>
+     </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="fade-section">
+  <h2>Experience</h2>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      Citi -  Internal Audit Analyst
+      <span>▼</span>
+    </div>
+    <div class="accordion-content">
+      June 2025 - August 2025
+      <br><br> <p><strong>Description:</strong></p>
+This summer, I  had the privilege to work as an Internal Audit Analyst in Citi's Finance Internal Audit team to provide independent assurance over global financial reporting and risk management processes. I specialized in documenting audit walkthroughs and identifying key controls, which sharpened my critical thinking and attention to detail. By leveraging internal audit frameworks and compliance standards, I helped streamline reporting processes and improve leadership visibility into potential risks.
+<br> <br><p><strong>Key skills developed:</strong></p>
+Risk Assessment, Reporting, Audit Documentation, Regulatory Compliance, Analytical Thinking, Communication.
+  </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      Cognizant - Business Analyst
+      <span>▼</span>
+    </div>
+    <div class="accordion-content">
+      June 2024 - August 2024
+     <br><br> <p><strong>Description:</strong></p>
+During this internship, I worked as a Business Analyst Intern, where I supported a proposal for a client's digital transformation initiatives. I conducted a gap analysis of the client's IT processes to evaluate existing tools and identify areas best suited for technological reform. I presented a 45-minute presentation on an AI adoption roadmap, tailored to align technology capabilities with business objectives. Additionally, I contributed to go-to-market strategy efforts by mapping Cognizant's technology offerings to client needs. This project was a $20M transformation opportunity. This experience strengthened my understanding of business cycles, technologies, and industry trends while developing a consulting mindset. 
+<br> <br><p><strong>Key skills developed:</strong></p>
+Key skills developed: IT Gap Analysis, Digital Transformation, Go-to-Market Strategy, Executive Presentations, Industry Research, Strategic Thinking
+  </div>
+  </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      Nubes Opus - Assistant Project Manager
+      <span>▼</span>
+    </div>
+    <div class="accordion-content">
+      May 2023 - June 2024
+      <br><br> <p><strong>Description:</strong></p>
+    <div class="accordion-content">
+I had the opportunity to work at a small business where I was an Assistant Project Manager. During my time there, I supported cloud migration projects for other small businesses, helping them reduce their infrastructure and operational costs. I also helped manage a project to develop a member portal for a state health department, improving system security and speed. Throughout the internship, I managed multiple projects in JIRA, gathered business requirements, and coordinated with stakeholders and offshore development teams through Agile scrum ceremonies. Additionally, as a team, we created project dashboards to streamline reporting and reduce our manual effort by 12 hours per week.
+<br> <br><p><strong>Key skills developed:</strong></p>
+Cloud Migration & Deployment, Agile Project Management, JIRA, Requirements Gathering, Stakeholder Management, Cross-functional Team Collaboration, Data Visualization, Workflow Automation  </div>
+  </div>
+   </div>
+
+  <div class="accordion-item">
+    <div class="accordion-header">
+      Mathnasium - Instructor
+      <span>▼</span>
+    </div>
+    <div class="accordion-content">
+    May 2023 - August 2023
+    <br><br> <p><strong>Description:</strong></p>
+    In this role, I worked at Mathnasium as an Instructor, where I taught children from preschool to high school. I helped students with their school homework and curriculum assignments. I also ensured that every student fully understood the concepts, resulting in academic improvement across all my students. I closely tracked student progress and communicated daily updates to parents. This experience strengthened my ability to express concepts clearly, helping me develop strong communication skills. 
+<br> <br><p><strong>Key skills developed:</strong></p>
+Lesson Planning, Communication, Coaching & Mentorship, Problem Solving, Time Management
+  </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership" class="fade-section">
+  <h2>Leadership</h2>
+
+  <div class="accordion-item"><div class="accordion-header">Delta Sigma Pi - Senior Vice President <span>▼</span></div><div class="accordion-content"> <p>October 2023 - December 2025</p> My time at Delta Sigma Pi signifies growth as a leader. I initially participated in the formal committee, then advanced to the brotherhood committee chair, then the Vice President of Chapter Operations, and finally as the Senior Vice President. As Vice President of Chapter Operations, I prepared and maintained official meeting minutes, delegated responsibilities, and coordinated over 60 chapter deadlines, ensuring compliance with national standards and timely submission. This experience strengthened my ability to manage complex operations, lead an organization, and maintain accountability. As Senior Vice President, I oversaw all committees by delegating a budget, tasks, and setting expectations. I helped organize weekly executive meetings, where progress, updates, and new business would be discussed. My main responsibilities included managing recruitment, specifically communicating with recruits, developing the interview and case study process, planning recruitment events, marketing, and presenting about our organization. </div></div>
+  <div class="accordion-item"><div class="accordion-header">Undergraduate Dean's Council - Committee Head <span>▼</span></div><div class="accordion-content"> <p>August 2023 - December 2025</p> As a Committee Head on the Undergraduate Dean's Council, I led a project to represent students' needs. I also helped lead an event focused on increasing career exposure for first-year students by organizing an alumni panel on post-graduation pathways. I managed the event coordination and planning for all of the students in the school of management. This event provided students with valuable insights into career options and the opportunity to network with alumni.</div></div>
+  <div class="accordion-item"><div class="accordion-header">Collegium V Honors College - Mentor <span>▼</span></div><div class="accordion-content"> <p>October 2024 - December 2025</p>As a Peer Mentor in the Collegium V Honors College, I supported two freshmen honors students by providing academic guidance, mentorship, and transition support during their first year at UT Dallas. Mentorship is a great resource that I wanted to provide to help students navigate expectations, coursework, choosing classes, and career advice. This position helped me see the value in a supportive network. </div></div>
+</section>
+<!-- education -->
+<section id="education" class="fade-section">
+  <h2>Education</h2>
+
+  <div class="card">
+    <h3>University of Texas at Dallas</h3> 
+    <p class="fade-in">08/2022 - 12/2025</p>
+    <p class="fade-in"><strong>Bachelor of Science </strong> - Information Technology and Systems</p>
+    <p class="fade-in"><strong>Track:</strong> Business Intelligence and Analytics</p>
+    <p class="fade-in"><strong>Honors Program:</strong> Davidson Honors Management Program & Collegium V Honors College</p>
+
+<br><br> <p class="fade-in"><strong>Relevant Coursework:</strong></p>
+    <p class="fade-in">
+      • Advanced Big Data Analytics & AWS Learner<br>
+      • Systems Analysis and Design<br>
+      • Database Fundamentals<br>
+      • Data Visualization<br>
+      • Business Intelligence<br>
+      • Web Analytics<br>
+      • Business Analytics<br>
+      • Quantitative Business Analysis<br>
+      • Statistics for Management<br>
+      • Network and Information Security<br>
+      • IT Infrastructure      
+    </p>
+      </div>
+</section>
+
+
+<!-- SKILLS -->
+<section id="skills" class="fade-section">
+  <h2>Skills</h2>
+  <div class="skills-grid">
+    <div class="card">
+      <h3>Certifications</h3>
+      <p class="fade-in">
+        • AWS Certified Cloud Practitioner<br>
+        • Microsoft Power BI<br>
+        • Google Project Management<br>
+        • Databases and SQL for Data Science with Python<br>
+        • Microsoft Excel<br>
+    </p>
+    </div>
+    <div class="card">
+      <h3>Technical Skills</h3>
+      <p class="fade-in">AWS Cloud, Azure, ETL, Python, Java, HTML, Database Management, SQL, R, ML/AI, SAP</p>
+    </div>
+    <div class="card">
+      <h3>Analytical Skills</h3>
+      <p class="fade-in">Tableau, Power BI, Excel, Google Analytics, JIRA, Agile, UI/UX, Figma</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="contact-footer">
+
+    <!-- Row 1 -->
+    <h3>Contact Me!</h3>
+
+    <!-- Row 2 (Icons) -->
+    <div class="contact-icons">
+      <a href="mailto:anvipragada@gmail.com" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/anvitha000/" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a href="resume_anvitha-BACPM.pdf" download aria-label="Resume">
+        <i class="fa-solid fa-file-arrow-down"></i>
+      </a>
+    </div>
+
+    <!-- Row 3 (Text) -->
+    <div class="contact-text">
+      <span>Email: anvipragada@gmail.com</span>
+      <span>Connect With Me!</span>
+      <span>Download My Resume</span>
+    </div>
+
+  </div>
+</footer>
+
+
+
+<script>
+  // Accordion toggle
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+
+  // Fade on scroll (Apple-style light effect)
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.fade-section').forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const fadePoint = window.innerHeight * 0.8;
+      section.style.opacity = rect.top < fadePoint ? 1 : 0.3;
+    });
+  });
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+const fadeInOnScroll = () => {
+  fadeElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 1.0) {
+      el.classList.add('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', fadeInOnScroll);
+window.addEventListener('load', fadeInOnScroll);
+
+</script>
+
+</body>
+</html>
